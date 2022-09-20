@@ -8,48 +8,51 @@ using System.Collections.Specialized;
 
 namespace FlexberryTestCase
 {
-    public class ConfigDeserializer
+    public static class ConfigDeserializer
     {
+
         /// <summary>
         /// Returns valid emails from .config files
         /// Logs invalid emails
         /// </summary>
         /// <returns>A list of emails</returns>
-        public static List<string> GetValidEmails()
+        public static List<string> DeserializeAppSettingsSection()
         {
-            // Gets valid emails using LINQ queries
-            var validEmails = (from item in ConfigurationManager.AppSettings.AllKeys
-                                   where Pinger.IsValidEmail(ConfigurationManager.AppSettings[item])
-                                   select ConfigurationManager.AppSettings[item])
-                                  .ToList();
-            
-            return validEmails;
+            // Returns all the values from AppSettings
+            return ConfigurationManager.AppSettings.GetValues().ToList();
         }
 
         /// <summary>
-        /// 
+        /// Deserializes sites section
+        /// Throws exception 
         /// </summary>
-        /// <returns></returns>
-        public static List<string> GetAdresses()
+        /// <returns>A list of sites to access. Throws NullReferenceException if sectionName is invalid</returns>
+        public static List<string> DesirializeNameValueCollectionSection(string sectionName)
         {
             // Deserializes section sites from .config
-            var keyValueSitesPairs = ConfigurationManager.GetSection("sites") as NameValueCollection;
+            var keyValueSitesPairs = ConfigurationManager.GetSection(sectionName) as NameValueCollection;
 
-            // Store adresses there
-            var adresses = new List<string>();
+            // Tries to get values
+            List<string> adresses = keyValueSitesPairs?.GetValues().ToList();
 
-            // If section sites exists 
-            if (keyValueSitesPairs != null)
-            {
-                // Get all sites (values in pairs)
-                adresses = (from key in keyValueSitesPairs.AllKeys
-                            select keyValueSitesPairs[key]).
-                            ToList();
-            }
-
-            return adresses;
+            // Checks if section exists, if not throws exception
+            return adresses?? throw new NullReferenceException($"Section {sectionName} doesn't exist");
         }
 
+        /// <summary>
+        /// Gets all accesible values from NameValueCollection
+        /// </summary>
+        /// <param name="nameValueCollection">A collection to get values from</param>
+        /// <returns>All values in collection. If no values returns empty collection</returns>
+        public static IEnumerable<string> GetValues(this NameValueCollection nameValueCollection)
+        {
 
+            // Get all sites (values in pairs)
+            var adresses = (from key in nameValueCollection.AllKeys
+                            select nameValueCollection[key]).
+                            ToList();
+
+            return adresses.Count != 0? adresses : new List<string>();
+        }
     }
 }

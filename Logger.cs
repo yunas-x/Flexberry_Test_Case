@@ -1,47 +1,44 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
 
 namespace FlexberryTestCase
 {
     public class Logger
     {
+        protected event Action<string, string, string> OnLog;
+
         /// <summary>
-        /// Logs invalid email adresses
+        /// Raises OnLogEvent
         /// </summary>
-        public static void LogInvalidEmails()
+        protected void RaiseOnLog(string entity, string status, string node)
         {
-
-            // Checking mail validity using LINQ-queries
-            var invalidEmails = (from item in ConfigurationManager.AppSettings.AllKeys
-                                 where !Pinger.IsValidEmail(ConfigurationManager.AppSettings[item])
-                                 select ConfigurationManager.AppSettings[item])
-                                .ToList();
-
-            /// Implement logging there
-
+            OnLog?.Invoke(entity, status, node);
         }
 
         /// <summary>
-        /// Logs invalid email adresses
-        /// Outs the list of invalid emails
+        /// Adds loging function to OnLog
         /// </summary>
-        public static void LogInvalidEmails(out List<string> invalidEmails)
+        /// <param name="action">Action to perform on logging</param>
+        public void AddLoging(Action<string, string, string> action)
         {
-
-            // Checking mail validity using LINQ-queries
-            invalidEmails = (from item in ConfigurationManager.AppSettings.AllKeys
-                             where !Pinger.IsValidEmail(ConfigurationManager.AppSettings[item])
-                             select ConfigurationManager.AppSettings[item])
-                             .ToList();
-
-            /// Implement logging there
-
+            OnLog += action;
         }
 
+        /// <summary>
+        /// Cancels loging function to OnLog
+        /// </summary>
+        /// <param name="action">Action to cancel on logging</param>
+        public void CancelLoging(Action<string, string, string> action)
+        {
+            OnLog -= action;
+        }
 
+        public Logger() {}
+
+        public Logger(Action<string, string, string> action)
+        {
+            AddLoging(action);
+        }
     }
 }
