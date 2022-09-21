@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <sites>
+    <apple.com Status="Success" Date="2022-09-21T12:54:56.5746442Z" />
+    <google.com Status="Success" Date="2022-09-21T12:54:56.6330768Z" />
+    <ya.ru Status="Success" Date="2022-09-21T12:54:56.6788283Z" />
+  </sites>
+  <DBase>
+    <DataBase Status="Failuure" Date="2022-09-21T12:54:59.6992235Z" />
+  </DBase>
+</root>

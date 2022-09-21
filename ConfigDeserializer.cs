@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Configuration;
 using System.Linq;
-using System.Net.Mail;
 using System.Collections.Specialized;
 
 namespace FlexberryTestCase

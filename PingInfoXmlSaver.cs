@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Xml.Linq;
 
 namespace FlexberryTestCase
@@ -9,16 +8,7 @@ namespace FlexberryTestCase
     public class PingInfoXmlSaver: PingInfoSaver
     { 
 
-        public PingInfoXmlSaver() { }
-
-        public PingInfoXmlSaver(Action<string, string, string> action) :
-            base(action)
-        { }
-
         public PingInfoXmlSaver(Action<string, string, string> action, string saveFileName) : base(action, saveFileName)
-        { }
-
-        public PingInfoXmlSaver(string saveFileName) : base(saveFileName)
         { }
 
         /// <summary>
@@ -31,11 +21,11 @@ namespace FlexberryTestCase
                 XDocument xdoc = new XDocument();
                 xdoc.Add(new XElement("root", elements));
                 xdoc.Save(FileName);
-                RaiseOnLog(FileName, "Save success", ICategories.Sends);
+                RaiseOnLog(FileName, "Save success", ICategories.Saves);
             }
             catch
             {
-                RaiseOnLog(FileName, "Save failed", ICategories.Sends);
+                RaiseOnLog(FileName, "Save failed", ICategories.Saves);
             }
         }
     }

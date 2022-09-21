@@ -1,13 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Npgsql;
+using System;
+using System.Configuration;
+using System.Data;
+using System.Text.RegularExpressions;
+using System.Xml.Linq;
 
 namespace FlexberryTestCase
 {
-    // To Do
     public class DataBasePinger : Logger
     {
-        public DataBasePinger() { }
 
         public DataBasePinger(Action<string, string, string> action) :
             base(action) { }
@@ -17,10 +18,54 @@ namespace FlexberryTestCase
         /// </summary>
         /// <param name="connectionString">DataBase connection string</param>
         /// <returns>0 on successful connection</returns>
-        public int IsAccesible(string connectionString)
+        private bool IsAccesible(string connectionString)
         {
+            bool status;
 
-            return 0;
+            try
+            {
+                var connection = new NpgsqlConnection(connectionString);
+                connection.Open();
+                status = connection.State == ConnectionState.Open;
+                connection.Close();
+            }
+
+            catch
+            {
+                status = false;
+                RaiseOnLog("DataBase", StatusToString(status), ICategories.DBase);
+            }
+
+            return status;
+
+
+
+        }
+
+        private static string StatusToString(bool status)
+        {
+            if (status)
+            {
+                return "Success";
+            }
+            else
+            {
+                return "Failuure";
+            }
+        }
+
+        public XElement CheckAllConnectionStrings(string section)
+        {
+            XElement results = new XElement(section);
+            for (int i = 1; i < ConfigurationManager.ConnectionStrings.Count; i++)
+            {
+                var conString = ConfigurationManager.ConnectionStrings[i].ConnectionString;
+                var currentResult = new XElement("DataBase", new XAttribute("Status", StatusToString(IsAccesible(conString))),
+                                                     new XAttribute("Date", DateTime.UtcNow));
+                results.Add(currentResult);
+            }
+
+            return results;
         }
     }
 }

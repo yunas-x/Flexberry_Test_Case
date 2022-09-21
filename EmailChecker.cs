@@ -1,17 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
 using System.Net.Mail;
-using System.Text;
 using System.Text.RegularExpressions;
 
 namespace FlexberryTestCase
 {
     public class EmailChecker: Logger
     {
-        public EmailChecker() { }
-
+        /// <summary>
+        /// Creates email checking instance
+        /// </summary>
+        /// <param name="action">Log function</param>
         public EmailChecker(Action<string, string, string> action) :
             base(action)
         { }
@@ -72,7 +71,7 @@ namespace FlexberryTestCase
                 }
 
                 // Replace @ with " at "
-                var newAdress = Regex.Replace(item, "@", "~at~");
+                var newAdress = Regex.Replace(item, "@", "--at--");
 
                 // Log there
                 RaiseOnLog(newAdress, validity, ICategories.Mails);

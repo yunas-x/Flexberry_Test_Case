@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Net.NetworkInformation;
 using System.Xml.Linq;
@@ -11,8 +10,10 @@ namespace FlexberryTestCase
     /// </summary>
     public class AdressPinger : Logger
     {
-        public AdressPinger() { }
-
+        /// <summary>
+        /// Creates an instance of adress pinging function
+        /// </summary>
+        /// <param name="action">Log function</param>
         public AdressPinger(Action<string, string, string> action) :
             base(action)
         { }
@@ -51,7 +52,7 @@ namespace FlexberryTestCase
         /// </summary>
         /// <param name="section">Name of section where sites are</param>
         /// <returns>XML document with sites accessibility</returns>
-        public XElement PackPingResultsToXml(string section = "sites")
+        public XElement PackPingResultsToXml(string section)
         {
             // Create Document
             var XmlPingResults = new XElement(section,

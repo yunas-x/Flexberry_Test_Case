@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿
 namespace FlexberryTestCase
 {
     interface ICategories
     {
-        protected static string[] categories = new string[4] { "Sends", "Mails", "Sites", "DBase" };
+        /// <summary>
+        /// Log categories
+        /// </summary>
+        protected static string[] categories = new string[5] { "Sends", "Mails", "Sites", "DBase", "Saves" };
 
         public static string[] Categories
         {
@@ -16,6 +16,11 @@ namespace FlexberryTestCase
         public static string Sends
         {
             get => categories[0];
+        }
+
+        public static string Saves
+        {
+            get => categories[4];
         }
 
         public static string Mails

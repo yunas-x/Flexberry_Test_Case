@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Xml.Linq;
 
 namespace FlexberryTestCase
@@ -88,23 +86,9 @@ namespace FlexberryTestCase
                 if (!xdoc.Root.Elements(category).Any())
                 {
                     // Create it
-                    xdoc.Add(new XElement(category));
+                    xdoc.Root.Add(new XElement(category));
                 }
             }
-        }
-
-        /// <summary>
-        /// Creates log if it doesn't exist
-        /// If new categories added in list it will update
-        /// </summary>
-        /// <param name="logPath">File path</param>
-        public void CreateLog(string logPath)
-        {
-            if (!FileExistsInAppDirectory(logPath))
-            {
-
-            }
-
         }
 
         /// <summary>

@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Configuration;
-using System.Net.NetworkInformation;
 using System.Xml.Linq;
 
 namespace FlexberryTestCase
@@ -23,13 +20,40 @@ namespace FlexberryTestCase
             if (args.Length == 0)
             {
                 // Turn logging on
+                #region LogOn
                 LoggingFunctions.MakeLog(log);
-                var pingInfoSender = new PingInfoSender(new LoggingFunctions(log).Log);
-                var emailChecker = new EmailChecker(new LoggingFunctions(log).Log);
 
-                emailChecker.GetValidEmails(); // gets from app.config
+                var loggingFunc = new Action<string, string, string>(new LoggingFunctions(log).Log);
+
+                var pingInfoSender = new PingInfoXmlSaver(loggingFunc, results);
+                var emailChecker = new EmailChecker(loggingFunc);
+                var dbPinger = new DataBasePinger(loggingFunc);
+                var adressSender = new AdressPinger(loggingFunc);
+                var mailSender = new PingInfoSender(loggingFunc, results);
+
+                #endregion
 
 
+                #region Checking
+                // Gets results of checks
+                var xResults = new List<XElement>();
+
+                xResults.Add(adressSender.PackPingResultsToXml(ICategories.Sites.ToLower())); // Checking sites
+
+
+
+                xResults.Add(dbPinger.CheckAllConnectionStrings(ICategories.DBase));
+
+
+                #endregion
+
+                #region PackAndSend
+                pingInfoSender.SaveToXml(xResults); // Create a file to send
+
+                // Sending results
+                var emails = emailChecker.GetValidEmails(); // gets from app.config
+                mailSender.MailResults(emails);
+                #endregion
             }
             else
             {

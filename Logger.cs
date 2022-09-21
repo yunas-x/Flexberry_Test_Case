@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace FlexberryTestCase
 {
@@ -34,8 +32,10 @@ namespace FlexberryTestCase
             OnLog -= action;
         }
 
-        public Logger() {}
-
+        /// <summary>
+        /// Logging instance (base for another classes)
+        /// </summary>
+        /// <param name="action">Log function</param>
         public Logger(Action<string, string, string> action)
         {
             AddLoging(action);
