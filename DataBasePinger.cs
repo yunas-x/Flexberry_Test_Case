@@ -18,22 +18,24 @@ namespace FlexberryTestCase
         /// </summary>
         /// <param name="connectionString">DataBase connection string</param>
         /// <returns>0 on successful connection</returns>
-        private bool IsAccesible(string connectionString)
+        private bool IsAccesible(string connectionString, string baseName = "DataBase")
         {
-            bool status;
+            bool status = false;
 
             try
             {
-                var connection = new NpgsqlConnection(connectionString);
-                connection.Open();
-                status = connection.State == ConnectionState.Open;
-                connection.Close();
+            var connection = new NpgsqlConnection(connectionString);
+            connection.Open();
+            status = connection.State == ConnectionState.Open;
+            connection.Close();
             }
-
             catch
             {
                 status = false;
-                RaiseOnLog("DataBase", StatusToString(status), ICategories.DBase);
+            }
+            finally
+            {
+                RaiseOnLog("baseName", StatusToString(status), ICategories.DBase);
             }
 
             return status;
@@ -50,7 +52,7 @@ namespace FlexberryTestCase
             }
             else
             {
-                return "Failuure";
+                return "Failure";
             }
         }
 
@@ -60,7 +62,9 @@ namespace FlexberryTestCase
             for (int i = 1; i < ConfigurationManager.ConnectionStrings.Count; i++)
             {
                 var conString = ConfigurationManager.ConnectionStrings[i].ConnectionString;
-                var currentResult = new XElement("DataBase", new XAttribute("Status", StatusToString(IsAccesible(conString))),
+                var currentResult = new XElement(ConfigurationManager.ConnectionStrings[i].Name, 
+                                                     new XAttribute("Status", 
+                                                        StatusToString(IsAccesible(conString, ConfigurationManager.ConnectionStrings[i].Name))),
                                                      new XAttribute("Date", DateTime.UtcNow));
                 results.Add(currentResult);
             }

@@ -31,7 +31,7 @@ namespace FlexberryTestCase
 
             xdoc.Root.Element(node)?
                 .Add(new XElement(entity, new XAttribute("Status", status),
-                                                              new XAttribute("Date", DateTime.UtcNow)));
+                                                              new XAttribute("Date", DateTime.Now)));
 
             xdoc.Save(FileName);
         }
