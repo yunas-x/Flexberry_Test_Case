@@ -54,7 +54,7 @@ namespace FlexberryTestCase
             List<string> validMails = new List<string>();
 
             // Checking mail adress validity 
-            foreach (var item in ConfigDeserializer.DesirializeNameValueCollectionSection("emails"))
+            foreach (var item in ConfigDeserializer.DesirializeValuesFromNameValueCollectionSection("emails"))
             {
                 // Store validity status there
                 string validity;
