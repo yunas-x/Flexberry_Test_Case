@@ -22,9 +22,7 @@ namespace FlexberryTestCase
                 // Turn logging on
                 #region LogOn
                 LoggingFunctions.MakeLog(log);
-
                 var loggingFunc = new Action<string, string, string>(new LoggingFunctions(log).Log);
-
                 var pingInfoSender = new PingInfoXmlSaver(loggingFunc, results);
                 var emailChecker = new EmailChecker(loggingFunc);
                 var dbPinger = new DataBasePinger(loggingFunc);
@@ -37,13 +35,8 @@ namespace FlexberryTestCase
                 #region Checking
                 // Gets results of checks
                 var xResults = new List<XElement>();
-
-                xResults.Add(adressSender.PackPingResultsToXml(ICategories.Sites.ToLower())); // Checking sites
-
-
-
+                xResults.Add(adressSender.PackPingResultsToXml("sites")); // Checking sites
                 xResults.Add(dbPinger.CheckAllConnectionStrings(ICategories.DBase));
-
 
                 #endregion
 

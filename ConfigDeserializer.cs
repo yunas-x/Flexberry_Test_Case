@@ -25,7 +25,7 @@ namespace FlexberryTestCase
         /// Throws exception 
         /// </summary>
         /// <returns>A list of sites to access. Throws NullReferenceException if sectionName is invalid</returns>
-        public static List<string> DesirializeNameValueCollectionSection(string sectionName)
+        public static List<string> DesirializeValuesFromNameValueCollectionSection(string sectionName)
         {
             // Deserializes section sites from .config
             var keyValueSitesPairs = ConfigurationManager.GetSection(sectionName) as NameValueCollection;
@@ -35,6 +35,23 @@ namespace FlexberryTestCase
 
             // Checks if section exists, if not throws exception
             return adresses?? throw new NullReferenceException($"Section {sectionName} doesn't exist");
+        }
+
+        public static Dictionary<string, string> DesirializeNameValueCollectionSection(string sectionName)
+        {
+            // Deserializes section sites from .config
+            var keyValueSitesPairs = ConfigurationManager.GetSection(sectionName) as NameValueCollection;
+
+            Dictionary<string, string> pairs = new Dictionary<string, string>();
+            // Tries to get pairs
+            for (var i = 0; i < keyValueSitesPairs.Count; i++)
+            {
+                var name = keyValueSitesPairs.AllKeys[i];
+                pairs.Add(name, keyValueSitesPairs[name]);
+            }
+
+            // Checks if section exists, if not throws exception
+            return pairs ?? throw new NullReferenceException($"Section {sectionName} doesn't exist");
         }
 
         /// <summary>

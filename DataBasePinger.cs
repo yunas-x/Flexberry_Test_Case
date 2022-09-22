@@ -24,10 +24,10 @@ namespace FlexberryTestCase
 
             try
             {
-                var connection = new NpgsqlConnection(connectionString);
-                connection.Open();
-                status = connection.State == ConnectionState.Open;
-                connection.Close();
+            var connection = new NpgsqlConnection(connectionString);
+            connection.Open();
+            status = connection.State == ConnectionState.Open;
+            connection.Close();
             }
             catch
             {

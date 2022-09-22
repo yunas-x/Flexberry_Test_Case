@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Net;
 using System.Net.NetworkInformation;
 using System.Xml.Linq;
 
@@ -46,7 +47,33 @@ namespace FlexberryTestCase
                 return status;
             }
         }
-        
+
+        /// <summary>
+        /// The method checks if host adress is accesible
+        /// </summary>
+        /// <param name="nameOrAdress">A host adress to check</param>
+        /// <returns>An exit code (0 for success)</returns>
+        private string PingHttpRequestAdressAsync(string name, string nameOrAdress)
+        {
+            string status;
+            try
+            {
+                var request = WebRequest.Create(nameOrAdress) as HttpWebRequest;
+                request.Method = "HEAD";
+                using (var response = (HttpWebResponse)request.GetResponse())
+                {
+                    status = response.StatusCode == HttpStatusCode.OK ? "Success" : "Fail";
+                }
+            }
+            catch
+            {
+                status = "Fail";
+            }
+
+            RaiseOnLog(name, status, ICategories.Sites);
+            return status;
+        }
+
         /// <summary>
         /// Checks if sites in section are availible and packs the results to XML
         /// </summary>
@@ -57,8 +84,8 @@ namespace FlexberryTestCase
             // Create Document
             var XmlPingResults = new XElement(section,
                                                 from site in ConfigDeserializer.DesirializeNameValueCollectionSection(section)
-                                                select new XElement(site,
-                                                                    new XAttribute("Status", PingAdress(site)),
+                                                select new XElement(site.Key,
+                                                                    new XAttribute("Status", PingHttpRequestAdressAsync(site.Key, site.Value)),
                                                                     new XAttribute("Date", DateTime.UtcNow)));
 
             return XmlPingResults;
