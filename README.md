@@ -11,3 +11,5 @@ To customize use the app.config files, be careful editing it
 Add unique keys to sites and store the destinations in values
 
 Add unique keys to emails (use correct mails) and store the emails in values
+
+Use websites url as they are in your browser
