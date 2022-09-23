@@ -35,7 +35,7 @@ namespace FlexberryTestCase
             }
             finally
             {
-                RaiseOnLog("baseName", StatusToString(status), ICategories.DBase);
+                RaiseOnLog(baseName, StatusToString(status), ICategories.DBase);
             }
 
             return status;
