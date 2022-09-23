@@ -65,9 +65,13 @@ namespace FlexberryTestCase
                     status = response.StatusCode == HttpStatusCode.OK ? "Success" : "Fail";
                 }
             }
-            catch
+            catch (WebException)
             {
                 status = "Fail";
+            }
+            catch
+            {
+                status = "Invalid";
             }
 
             RaiseOnLog(name, status, ICategories.Sites);
