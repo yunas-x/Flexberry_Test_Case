@@ -44,6 +44,11 @@ namespace FlexberryTestCase
 
         }
 
+        /// <summary>
+        /// Converts status to string
+        /// </summary>
+        /// <param name="status">Boolean status</param>
+        /// <returns>Status converted to string (Success or Failure)</returns>
         private static string StatusToString(bool status)
         {
             if (status)
@@ -56,6 +61,11 @@ namespace FlexberryTestCase
             }
         }
 
+        /// <summary>
+        /// Checks all connection strings
+        /// </summary>
+        /// <param name="section">A name of the section</param>
+        /// <returns>A result in Xml</returns>
         public XElement CheckAllConnectionStrings(string section)
         {
             XElement results = new XElement(section);

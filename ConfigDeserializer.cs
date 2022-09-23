@@ -37,6 +37,11 @@ namespace FlexberryTestCase
             return adresses?? throw new NullReferenceException($"Section {sectionName} doesn't exist");
         }
 
+        /// <summary>
+        /// Deserializes sites section
+        /// Throws exception 
+        /// </summary>
+        /// <returns>A list of sites (names and values) to access. Throws NullReferenceException if sectionName is invalid</returns>
         public static Dictionary<string, string> DesirializeNameValueCollectionSection(string sectionName)
         {
             // Deserializes section sites from .config
