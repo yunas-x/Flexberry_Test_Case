@@ -1,108 +1,58 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <Sends>
-    <yunas2002--at--iCloud.com Status="Report send failure" Date="2022-09-20T16:23:25.2471676Z" />
-    <yunasu57--at--gmail.com Status="Report send failure" Date="2022-09-20T16:23:26.6460604Z" />
-    <yunas2002--at--iCloud.com Status="Report send successfully" Date="2022-09-20T16:32:56.4812904Z" />
-    <yunasu57--at--gmail.com Status="Report send successfully" Date="2022-09-20T16:32:58.103737Z" />
-    <yunas2002--at--iCloud.com Status="Report send successfully" Date="2022-09-21T12:44:25.3993003Z" />
-    <yunasu57--at--gmail.com Status="Report send successfully" Date="2022-09-21T12:44:26.737794Z" />
-    <yunas2002--at--iCloud.com Status="Report send successfully" Date="2022-09-21T12:55:02.9409625Z" />
-    <yunasu57--at--gmail.com Status="Report send successfully" Date="2022-09-21T12:55:04.2594322Z" />
+    <yunas2002--at--iCloud.com Status="Report send successfully" Date="2022-09-22T20:37:07.0392336+05:00" />
+    <yunasu57--at--gmail.com Status="Report send successfully" Date="2022-09-22T20:37:08.326131+05:00" />
+    <yunas2002--at--iCloud.com Status="Report send successfully" Date="2022-09-22T21:07:46.006728+05:00" />
+    <yunas2002--at--iCloud.com Status="Report send successfully" Date="2022-09-27T08:13:44.3689467+05:00" />
+    <yunasu57--at--gmail.com Status="Report send successfully" Date="2022-09-27T08:13:47.0388791+05:00" />
   </Sends>
   <Mails>
-    <ya.ru Status="Test" Date="2022-09-20T14:22:15.1067861Z" />
-    <yunas2002-at-iCloud.com Status="Valid" Date="2022-09-20T14:41:11.2592809Z" />
-    <yunasu57-at-gmail.com Status="Valid" Date="2022-09-20T14:41:11.2801565Z" />
-    <yunasu57-at-gmai Status="Invalid" Date="2022-09-20T14:41:11.2898947Z" />
-    <yunas2002--at--iCloud.com Status="Valid" Date="2022-09-20T16:20:44.0387139Z" />
-    <yunasu57--at--gmail.com Status="Valid" Date="2022-09-20T16:20:44.0523899Z" />
-    <yunasu57--at--gmai Status="Invalid" Date="2022-09-20T16:20:44.0614581Z" />
-    <yunas2002--at--iCloud.com Status="Valid" Date="2022-09-20T16:23:22.6904355Z" />
-    <yunasu57--at--gmail.com Status="Valid" Date="2022-09-20T16:23:22.7003908Z" />
-    <yunasu57--at--gmai Status="Invalid" Date="2022-09-20T16:23:22.7087665Z" />
-    <yunas2002--at--iCloud.com Status="Valid" Date="2022-09-20T16:25:05.3628757Z" />
-    <yunasu57--at--gmail.com Status="Valid" Date="2022-09-20T16:25:05.4073972Z" />
-    <yunasu57--at--gmai Status="Invalid" Date="2022-09-20T16:25:05.4201653Z" />
-    <yunas2002--at--iCloud.com Status="Valid" Date="2022-09-20T16:32:54.333147Z" />
-    <yunasu57--at--gmail.com Status="Valid" Date="2022-09-20T16:32:54.3448805Z" />
-    <yunasu57--at--gmai Status="Invalid" Date="2022-09-20T16:32:54.3553129Z" />
-    <yunas2002--at--iCloud.com Status="Valid" Date="2022-09-21T12:44:22.3864962Z" />
-    <yunasu57--at--gmail.com Status="Valid" Date="2022-09-21T12:44:22.394429Z" />
-    <yunasu57--at--gmai Status="Invalid" Date="2022-09-21T12:44:22.4041792Z" />
-    <yunas2002--at--iCloud.com Status="Valid" Date="2022-09-21T12:55:01.2375365Z" />
-    <yunasu57--at--gmail.com Status="Valid" Date="2022-09-21T12:55:01.2760073Z" />
-    <yunasu57--at--gmai Status="Invalid" Date="2022-09-21T12:55:01.2927583Z" />
+    <yunas2002--at--iCloud.com Status="Valid" Date="2022-09-22T20:37:05.0128753+05:00" />
+    <yunasu57--at--gmail.com Status="Valid" Date="2022-09-22T20:37:05.0250845+05:00" />
+    <yunasu57--at--gmai Status="Invalid" Date="2022-09-22T20:37:05.0354516+05:00" />
+    <yunas2002--at--iCloud.com Status="Valid" Date="2022-09-22T21:07:43.2602742+05:00" />
+    <yunasu57--at--gmail.com Status="Valid" Date="2022-09-22T21:07:43.275313+05:00" />
+    <yunasu57--at--gmai Status="Invalid" Date="2022-09-22T21:07:43.2915449+05:00" />
+    <yunas2002--at--iCloud.com Status="Valid" Date="2022-09-22T22:41:21.614512+05:00" />
+    <yunasu57--at--gmail.com Status="Valid" Date="2022-09-22T22:41:21.6288931+05:00" />
+    <yunasu57--at--gmai Status="Invalid" Date="2022-09-22T22:41:21.6463241+05:00" />
+    <yunas2002--at--iCloud.com Status="Valid" Date="2022-09-27T08:13:38.9166252+05:00" />
+    <yunasu57--at--gmail.com Status="Valid" Date="2022-09-27T08:13:38.9339701+05:00" />
+    <yunasu57--at--gmai Status="Invalid" Date="2022-09-27T08:13:38.9507473+05:00" />
   </Mails>
   <Sites>
-    <apple.com Status="Success" Date="2022-09-20T16:20:09.3874833Z" />
-    <google.com Status="Fail" Date="2022-09-20T16:20:14.2244484Z" />
-    <ya.ru Status="Success" Date="2022-09-20T16:20:14.3783908Z" />
-    <apple.com Status="Success" Date="2022-09-20T16:20:34.2154217Z" />
-    <google.com Status="Fail" Date="2022-09-20T16:20:39.2341573Z" />
-    <ya.ru Status="Success" Date="2022-09-20T16:20:39.301356Z" />
-    <apple.com Status="Success" Date="2022-09-20T16:23:16.1569642Z" />
-    <google.com Status="Fail" Date="2022-09-20T16:23:20.7260566Z" />
-    <ya.ru Status="Success" Date="2022-09-20T16:23:20.8011732Z" />
-    <apple.com Status="Success" Date="2022-09-20T16:24:57.4598027Z" />
-    <google.com Status="Fail" Date="2022-09-20T16:25:02.2276673Z" />
-    <ya.ru Status="Success" Date="2022-09-20T16:25:02.4264913Z" />
-    <apple.com Status="Success" Date="2022-09-20T16:32:47.5873631Z" />
-    <google.com Status="Fail" Date="2022-09-20T16:32:52.2247629Z" />
-    <ya.ru Status="Success" Date="2022-09-20T16:32:54.2753558Z" />
-    <apple.com Status="Success" Date="2022-09-21T12:23:59.0361283Z" />
-    <google.com Status="Success" Date="2022-09-21T12:23:59.1624268Z" />
-    <ya.ru Status="Success" Date="2022-09-21T12:23:59.2212879Z" />
-    <apple.com Status="Success" Date="2022-09-21T12:24:59.3340824Z" />
-    <google.com Status="Success" Date="2022-09-21T12:24:59.396021Z" />
-    <ya.ru Status="Success" Date="2022-09-21T12:24:59.4437226Z" />
-    <apple.com Status="Success" Date="2022-09-21T12:25:09.6840067Z" />
-    <google.com Status="Success" Date="2022-09-21T12:25:09.7454935Z" />
-    <ya.ru Status="Success" Date="2022-09-21T12:25:09.7916954Z" />
-    <apple.com Status="Success" Date="2022-09-21T12:27:24.9638081Z" />
-    <google.com Status="Success" Date="2022-09-21T12:27:25.0406796Z" />
-    <ya.ru Status="Success" Date="2022-09-21T12:27:25.0861733Z" />
-    <apple.com Status="Success" Date="2022-09-21T12:38:15.8425479Z" />
-    <google.com Status="Success" Date="2022-09-21T12:38:15.9190482Z" />
-    <ya.ru Status="Success" Date="2022-09-21T12:38:15.9753507Z" />
-    <apple.com Status="Success" Date="2022-09-21T12:38:32.25599Z" />
-    <google.com Status="Success" Date="2022-09-21T12:38:32.3199179Z" />
-    <ya.ru Status="Success" Date="2022-09-21T12:38:32.3693569Z" />
-    <apple.com Status="Success" Date="2022-09-21T12:43:36.0643362Z" />
-    <google.com Status="Success" Date="2022-09-21T12:43:36.1281944Z" />
-    <ya.ru Status="Success" Date="2022-09-21T12:43:36.1856567Z" />
-    <apple.com Status="Success" Date="2022-09-21T12:44:09.9766084Z" />
-    <google.com Status="Success" Date="2022-09-21T12:44:10.0386864Z" />
-    <ya.ru Status="Success" Date="2022-09-21T12:44:10.0850245Z" />
-    <apple.com Status="Success" Date="2022-09-21T12:44:18.9107871Z" />
-    <google.com Status="Success" Date="2022-09-21T12:44:18.9790795Z" />
-    <ya.ru Status="Success" Date="2022-09-21T12:44:19.0252993Z" />
-    <apple.com Status="Success" Date="2022-09-21T12:45:03.6711929Z" />
-    <google.com Status="Success" Date="2022-09-21T12:45:03.7350885Z" />
-    <ya.ru Status="Success" Date="2022-09-21T12:45:03.7816679Z" />
-    <apple.com Status="Success" Date="2022-09-21T12:47:55.4839612Z" />
-    <google.com Status="Success" Date="2022-09-21T12:47:55.5592524Z" />
-    <ya.ru Status="Success" Date="2022-09-21T12:47:55.6190046Z" />
-    <apple.com Status="Success" Date="2022-09-21T12:50:02.9853381Z" />
-    <google.com Status="Success" Date="2022-09-21T12:50:03.0530775Z" />
-    <ya.ru Status="Success" Date="2022-09-21T12:50:03.1024025Z" />
-    <apple.com Status="Success" Date="2022-09-21T12:50:42.2805824Z" />
-    <google.com Status="Success" Date="2022-09-21T12:50:42.3466047Z" />
-    <ya.ru Status="Success" Date="2022-09-21T12:50:42.3924635Z" />
-    <apple.com Status="Success" Date="2022-09-21T12:51:31.3048585Z" />
-    <google.com Status="Success" Date="2022-09-21T12:51:31.3692849Z" />
-    <ya.ru Status="Success" Date="2022-09-21T12:51:31.4160604Z" />
-    <apple.com Status="Success" Date="2022-09-21T12:52:09.0451219Z" />
-    <google.com Status="Success" Date="2022-09-21T12:52:09.1177102Z" />
-    <ya.ru Status="Success" Date="2022-09-21T12:52:09.1638373Z" />
-    <apple.com Status="Success" Date="2022-09-21T12:53:54.8133282Z" />
-    <google.com Status="Success" Date="2022-09-21T12:53:54.8872195Z" />
-    <ya.ru Status="Success" Date="2022-09-21T12:53:54.934379Z" />
-    <apple.com Status="Success" Date="2022-09-21T12:54:56.5690091Z" />
-    <google.com Status="Success" Date="2022-09-21T12:54:56.6322092Z" />
-    <ya.ru Status="Success" Date="2022-09-21T12:54:56.6779859Z" />
+    <apple.com Status="Success" Date="2022-09-22T20:37:04.5213941+05:00" />
+    <google.com Status="Success" Date="2022-09-22T20:37:04.6056656+05:00" />
+    <ya.ru Status="Success" Date="2022-09-22T20:37:04.6635013+05:00" />
+    <apple.com Status="Success" Date="2022-09-22T21:07:40.9469373+05:00" />
+    <google.com Status="Success" Date="2022-09-22T21:07:41.2772767+05:00" />
+    <ya.ru Status="Success" Date="2022-09-22T21:07:41.4578027+05:00" />
+    <dzen.ru Status="Success" Date="2022-09-22T21:07:41.5217405+05:00" />
+    <dnqwesad.ru Status="Doesn't Exist" Date="2022-09-22T21:07:41.5861563+05:00" />
+    <site1 Status="Success" Date="2022-09-22T22:41:19.636825+05:00" />
+    <site2 Status="Success" Date="2022-09-22T22:41:20.5863248+05:00" />
+    <site6 Status="Fail" Date="2022-09-22T22:41:20.9218647+05:00" />
+    <site7 Status="Fail" Date="2022-09-22T22:41:21.0634119+05:00" />
+    <site1 Status="Success" Date="2022-09-23T11:27:26.0295329+05:00" />
+    <site2 Status="Success" Date="2022-09-23T11:27:26.3990393+05:00" />
+    <site6 Status="Fail" Date="2022-09-23T11:27:27.2206701+05:00" />
+    <site1 Status="Success" Date="2022-09-27T08:13:28.8775126+05:00" />
+    <site2 Status="Success" Date="2022-09-27T08:13:29.9301627+05:00" />
+    <site6 Status="Fail" Date="2022-09-27T08:13:30.7649871+05:00" />
+    <site7 Status="Doesn't exist" Date="2022-09-27T08:13:30.7845384+05:00" />
   </Sites>
   <DBase>
-    <DataBase Status="Failuure" Date="2022-09-21T12:54:59.6986639Z" />
+    <baseName Status="Success" Date="2022-09-22T20:37:04.9546041+05:00" />
+    <baseName Status="Success" Date="2022-09-22T21:07:43.2093495+05:00" />
+    <baseName Status="Success" Date="2022-09-22T22:41:21.5814529+05:00" />
+    <baseName Status="Success" Date="2022-09-27T08:13:38.0358851+05:00" />
+    <baseName Status="Failure" Date="2022-09-27T08:13:38.7771254+05:00" />
   </DBase>
+  <Saves>
+    <lastResults.xml Status="Save success" Date="2022-09-22T20:37:04.9623743+05:00" />
+    <lastResults.xml Status="Save success" Date="2022-09-22T21:07:43.2275801+05:00" />
+    <lastResults.xml Status="Save success" Date="2022-09-22T22:41:21.5970113+05:00" />
+    <lastResults.xml Status="Save success" Date="2022-09-27T08:13:38.8403794+05:00" />
+  </Saves>
 </root>
