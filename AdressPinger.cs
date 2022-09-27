@@ -53,7 +53,7 @@ namespace FlexberryTestCase
         /// </summary>
         /// <param name="nameOrAdress">A host adress to check</param>
         /// <returns>An exit code (0 for success)</returns>
-        private string PingHttpRequestAdressAsync(string name, string nameOrAdress)
+        private string PingHttpRequestAdress(string name, string nameOrAdress)
         {
             string status;
             try
@@ -89,7 +89,7 @@ namespace FlexberryTestCase
             var XmlPingResults = new XElement(section,
                                                 from site in ConfigDeserializer.DesirializeNameValueCollectionSection(section)
                                                 select new XElement(site.Key,
-                                                                    new XAttribute("Status", PingHttpRequestAdressAsync(site.Key, site.Value)),
+                                                                    new XAttribute("Status", PingHttpRequestAdress(site.Key, site.Value)),
                                                                     new XAttribute("Date", DateTime.UtcNow)));
 
             return XmlPingResults;
